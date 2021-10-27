@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/v4-shims.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.3/js/v4-shims.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/HomeStyle.css' %}" />
+    {% block link %} {% endblock %}
+    <title></title>
+</head>
+
+<body>
+    <aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left" id="show-side-navigation1">
+        <i class="uil-bars close-aside d-md-none d-lg-none" data-close="show-side-navigation1"></i>
+        <div class="sidebar-header d-flex justify-content-center align-items-center px-3 py-4">
+            <img class="rounded-pill img-fluid" width="65"
+                src="https://24h68.com/wp-content/uploads/2021/07/24hhoc.edu_.vn-logo-tnut-hd-1280x1280-1.png" alt="">
+            <div class="ms-2">
+                <h5 class="fs-6 mb-0">
+                    <a class="text-decoration-none" href="#">CTD-TNUT</a>
+                </h5>
+                <p class="mt-1 mb-0">Trung tâm nghiên cứu và phát triển công nghệ</p>
+            </div>
+        </div>
+
+        <ul class="categories list-unstyled">
+            <li class="has-dropdown">
+                <i class="uil-auto-flash"></i><a href="#"> Ghép nối tự động</a>
+                <ul class="sidebar-dropdown list-unstyled">
+                    <li><a href="{% url 'Home' %}">Giám sát</a></li>
+                    <li><a href="{% url 'AutoCombineCalculate' %}">Tính toán</a></li>
+                    <li><a href="{% url 'Manage' %}">Quản lý dữ liệu</a></li>
+                </ul>
+            </li>
+            <li class="has-dropdown">
+                <i class="uil-auto-flash fa-fw"></i><a href="#"> Ghép nối mặc định</a>
+                <ul class="sidebar-dropdown list-unstyled">
+                    <li><a href="{% url 'DefaultCombine' %}">Giám sát</a></li>
+                    <li><a href="{% url 'DefaultCombineCaculate' %}">Tính toán</a></li>
+                    <li><a href="{% url 'Manage' %}">Quản lý dữ liệu</a></li>
+                </ul>
+            </li>
+            <li class="">
+                <i class="uil-cog"></i><a href="{% url 'Config' %}"> Cấu hình</a>
+            </li>
+            <li class="">
+                <i class="uil-question-circle"></i><a href="{% url 'Maintain' %}"> Bảo trì</a>
+            </li>
+        </ul>
+    </aside>
+
+    <section id="wrapper">
+        <nav class="navbar navbar-expand-md">
+            <div class="container-fluid mx-2">
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#toggle-navbar" aria-controls="toggle-navbar" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="uil-bars text-white"></i>
+                    </button>
+                    <a class="navbar-brand" href="#">Hệ thống giám sát Pin Mặt Trời</a>
+                </div>
+            </div>
+        </nav>
+        {% block content %}
+        {% endblock %}
+    </section>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous">
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js"></script>
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/HomeScript.js' %}"></script>
+ {% block script %} {% endblock %}
+
+</html>
